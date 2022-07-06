@@ -8,7 +8,9 @@ public class Main {
         MyLambda greetings = ()->System.out.println("Hello Lambda!");
         greetings.foo();
         MyAdd myAdd= (int a,int b)->a+b;
-        System.out.println(myAdd.sum(3,5));
+        System.out.println("Sum: "+ myAdd.sum( 3,5));
+        MyStringLength myStringLength = s->s.length();
+        System.out.println("Length: "+ myStringLength.getLength("Hello World!"));
     }
 }
 interface MyLambda{
@@ -16,4 +18,7 @@ interface MyLambda{
 }
 interface MyAdd{
     int sum(int a,int b);
+}
+interface MyStringLength{
+    int getLength(String s);
 }
